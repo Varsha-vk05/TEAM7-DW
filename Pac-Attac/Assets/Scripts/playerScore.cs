@@ -49,14 +49,31 @@ public class HighScoreManager : MonoBehaviour
         highScoreEntryList = new List<HighScoreEntry>()
         {
 
-        };
+        }
+        //sort entry list by score
+        for (int i = 0; i < highScoreEntryList.Count; i++)
+        {
+            for (int j = 0; j < highScoreEntryList.Count; j++)
+            {
+                if (highScoreEntryList[j] > highScoreEntryList[i])
+                {//swap
+                    HighScoreEntry tmp = highScoreEntryList[i];
+                    highScoreEntryList[i] = highScoreEntryList[j];
+                    highScoreEntryList[j] = tmp;
+                }
+            }
+        }
+        string json = JsonUtility = ToJson(highScoreEntryList);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+        PlayerPrefs.GetString("highscoreTable");
         highScoreEntryTransformList = new List<Transform>();
         foreach (HighScoreEntry highScoreEntry in highScoreEntryList)
         {
-            CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container,List < Transform > transformList)
+            CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container, List < Transform > transformList);
         }
     }
-    private void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container, List<Transform> transformList)
+    private void CreateHighScoreEntryTransform(HighScoreEntry highScoreEntry, Transform container, List <Transform> transformList)
     {
         float templateHeight 30f;
 
@@ -67,25 +84,29 @@ public class HighScoreManager : MonoBehaviour
 
         int rank = i + 1;
         string rankString;
-        switch (rank)
+        switch (rank);
         {
-            default:
+            default: 
                 rankString = rank + "TH"; break;
             case 1: rankString = "1st"; break;
             case 2: rankString = "2nd"; break;
             case 3: rankString = "3rd"; break;
-        }
-        entryTransform.Find("postext").GetComponant<Text>().text = "";
+            
+            entryTransform.Find("postext").GetComponant<Text>().text = "";
 
-        int score = highScoreEntry.score;
-        entryTransform.Find("scoretext").GetComponant<Text>().text = "";
+            int score = highScoreEntry.score;
+            entryTransform.Find("scoretext").GetComponant<Text>().text = "";
 
-        string name -highScoreEntry.name;
+            string name = highScoreEntry.name;
             entryTransform.Find("nametext").GetComponant<Text>().text = "";
 
-        transformList.Add(entryTransform);
-
-
-
+            transformList.Add(entryTransform);
+        }
+    }
+        [System.Serializable] 
+    private class HighscoreEntry()
+    {
+        public int score;
+        public int name;
     }
 }
