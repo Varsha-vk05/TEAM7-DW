@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab; 
-    public float spawnInterval = 3f; 
+    public GameObject obstaclePrefab;
+    public float spawnInterval = 3f;
     private float spawnTimer;
 
-    public float spawnRangeX = 8f; 
-    public float spawnRangeY = 4f;
+    public float spawnPadding = 175f; 
 
     void Start()
     {
@@ -23,16 +20,22 @@ public class ObstacleManager : MonoBehaviour
         if (spawnTimer <= 0f)
         {
             SpawnObstacle();
-            spawnTimer = spawnInterval; 
+            spawnTimer = spawnInterval;
         }
     }
 
     void SpawnObstacle()
     {
-        float randomX = Random.Range(-spawnRangeX, spawnRangeX);
-        float randomY = Random.Range(-spawnRangeY, spawnRangeY);
+        
+        Vector2 screenMin = Camera.main.ScreenToWorldPoint(new Vector2(spawnPadding, spawnPadding));
+        Vector2 screenMax = Camera.main.ScreenToWorldPoint(new Vector2(1024 - spawnPadding, 1024 - spawnPadding));
+
+    
+        float randomX = Random.Range(screenMin.x, screenMax.x);
+        float randomY = Random.Range(screenMin.y, screenMax.y);
         Vector2 spawnPosition = new Vector2(randomX, randomY);
 
+       
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
     }
 }
