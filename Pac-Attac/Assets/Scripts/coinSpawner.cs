@@ -4,7 +4,7 @@ public class CoinSpawner : MonoBehaviour
 {
     public GameObject Coin; 
     public float spawnInterval = 3.5f; // Time in seconds between spawns
-    public float spawnPadding = 100f; // Keeps coins from spawning at the edges
+    public float spawnPadding = 175f; // Keeps coins from spawning at the edges
 
     private float spawnTimer; 
 
