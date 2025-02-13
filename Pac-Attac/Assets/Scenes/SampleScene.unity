@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIt: 0
-  itSprite: {fileID: 21300000, guid: 0c5587886e1a87643ad4a8d6416068d3, type: 3}
+  itSprite: {fileID: 21300000, guid: 7e13d0c7590922b45b2ee046bf4cabcd, type: 3}
   notItSprite: {fileID: 21300000, guid: 7773bbd2768da4a41834e2c88f9d6706, type: 3}
 --- !u!114 &637377410
 MonoBehaviour:
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIt: 1
-  itSprite: {fileID: 21300000, guid: 3cfe62b3a2af0154894d84bbfed98f52, type: 3}
+  itSprite: {fileID: 21300000, guid: 8e601cc966f1ad544952715c430d370f, type: 3}
   notItSprite: {fileID: 21300000, guid: f662c66e406291d4ea97808ac5f14d3c, type: 3}
 --- !u!114 &1454114188
 MonoBehaviour:
