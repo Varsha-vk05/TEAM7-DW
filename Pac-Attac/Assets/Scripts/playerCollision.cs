@@ -6,6 +6,9 @@ public class playerCollision : MonoBehaviour
 {
     public bool isIt = false; // is the player it?
     private SpriteRenderer spriteRenderer; // sprite renderer component
+
+    public Sprite itSprite; //Sprite for when the player is IT
+    public Sprite notItSprite; // Sprite when the player is NOT IT 
     private bool canTag = true; // can the player tag another player?;; need this for our cooldown.
 
     float cooldown = 2f; // cooldown for tagging another player
@@ -14,7 +17,7 @@ public class playerCollision : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); // get the sprite renderer component
-        ChangeColor(); // change the color of the player
+        ChangeSprite();
     }
 
     void Update()
@@ -32,17 +35,20 @@ public class playerCollision : MonoBehaviour
 
             if (otherPlayer != null && otherPlayer.canTag)
             {
-                isIt = false;
-                otherPlayer.isIt = true;
-
-                ChangeColor();
-                otherPlayer.ChangeColor();
-
-                canTag = false;
-
-                //StartCoroutine(TagCooldown());
+                SwapRoles(otherPlayer);
             }
         }
+    }
+
+    void SwapRoles (playerCollision otherPlayer)
+    {
+        isIt = false;
+        otherPlayer.isIt = true;
+
+        ChangeSprite();
+        otherPlayer.ChangeSprite();
+
+        canTag = false;
     }
 
     private void TagCooldown()
@@ -58,9 +64,8 @@ public class playerCollision : MonoBehaviour
         }
     }
 
-    public void ChangeColor()
+    public void ChangeSprite()
     {
-        spriteRenderer.color = isIt ? Color.red : Color.green; // change the color of the player
-        Debug.Log(gameObject.name + " changed color to " + spriteRenderer.color); // Debug message
+        spriteRenderer.sprite = isIt ? itSprite : notItSprite;
     }
 }
