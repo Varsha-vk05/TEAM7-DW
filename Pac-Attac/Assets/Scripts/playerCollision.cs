@@ -14,6 +14,7 @@ public class playerCollision : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); // get the sprite renderer component
+      
         ChangeColor(); // change the color of the player
     }
 
@@ -40,7 +41,7 @@ public class playerCollision : MonoBehaviour
 
                 canTag = false;
 
-                //StartCoroutine(TagCooldown());
+               
             }
         }
     }
@@ -61,6 +62,7 @@ public class playerCollision : MonoBehaviour
     public void ChangeColor()
     {
         spriteRenderer.color = isIt ? Color.red : Color.green; // change the color of the player
-        Debug.Log(gameObject.name + " changed color to " + spriteRenderer.color); // Debug message
+        
     }
+    
 }
