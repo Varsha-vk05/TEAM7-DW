@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject spike;
     public float spawnInterval = 3f;
     private float spawnTimer;
 
-    public float spawnPadding = 175f; 
+    public float spawnPadding = 220f; 
 
     void Start()
     {
@@ -35,7 +35,7 @@ public class ObstacleManager : MonoBehaviour
         float randomY = Random.Range(screenMin.y, screenMax.y);
         Vector2 spawnPosition = new Vector2(randomX, randomY);
 
-       
-        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+
+        Instantiate(spike, spawnPosition, Quaternion.identity);
     }
 }
