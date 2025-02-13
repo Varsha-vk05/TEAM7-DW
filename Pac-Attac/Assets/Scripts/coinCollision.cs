@@ -5,6 +5,7 @@ using UnityEngine;
 public class coinCollision : MonoBehaviour
 {
     private Animator anim;
+    public GameObject collect;
 
     void Start()
     {
@@ -26,13 +27,12 @@ public class coinCollision : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-        public void AnimationManager();
-        {
-            Instantiante("collect1", Spawn.Position(0), Spawn.Rotation(0));
-            anim.Play("coinCollect");
-            Yeild WaitForSeconds(1f);
-            Destroy(gameObject);
-        }
+    }
+    private void AnimationManager()
+    {
+        Instantiate("collect1",0,0);
+        anim.Play("coinCollect");
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }
