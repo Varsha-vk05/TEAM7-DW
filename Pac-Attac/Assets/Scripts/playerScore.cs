@@ -18,17 +18,14 @@ public class playerScore : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        if (scoreText != null)
-        {
-            scoreText.text = "Score: " + score.ToString();
-        }
+        UpdateScoreText();
     }
 
     void UpdateScoreText()
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
         }
     }
 }
