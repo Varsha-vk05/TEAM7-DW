@@ -1,41 +1,41 @@
 using UnityEngine;
 
-public class CoinSpawner : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
-    public GameObject Coin; 
-    public float spawnInterval = 3.5f; // Time in seconds between spawns
-    public float spawnPadding = 175f; // Keeps coins from spawning at the edges
+    public GameObject obstaclePrefab;
+    public float spawnInterval = 3f;
+    private float spawnTimer;
 
-    private float spawnTimer; 
+    public float spawnPadding = 175f; 
 
     void Start()
     {
-        spawnTimer = spawnInterval; 
+        spawnTimer = spawnInterval;
     }
 
     void Update()
     {
-        spawnTimer -= Time.deltaTime; 
+        spawnTimer -= Time.deltaTime;
 
-        if (spawnTimer <= 0f) 
+        if (spawnTimer <= 0f)
         {
-            SpawnCoin();
+            SpawnObstacle();
             spawnTimer = spawnInterval;
         }
     }
 
-    void SpawnCoin()
+    void SpawnObstacle()
     {
         
         Vector2 screenMin = Camera.main.ScreenToWorldPoint(new Vector2(spawnPadding, spawnPadding));
         Vector2 screenMax = Camera.main.ScreenToWorldPoint(new Vector2(1024 - spawnPadding, 1024 - spawnPadding));
 
-        
+    
         float randomX = Random.Range(screenMin.x, screenMax.x);
         float randomY = Random.Range(screenMin.y, screenMax.y);
         Vector2 spawnPosition = new Vector2(randomX, randomY);
 
-        
-        Instantiate(Coin, spawnPosition, Quaternion.identity);
+       
+        Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
     }
 }
