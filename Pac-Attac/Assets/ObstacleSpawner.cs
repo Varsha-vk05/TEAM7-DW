@@ -6,7 +6,7 @@ public class ObstacleManager : MonoBehaviour
     public float spawnInterval = 3f;
     private float spawnTimer;
 
-    public float spawnPadding = 175f; 
+    public float spawnPadding = 220f; 
 
     void Start()
     {
