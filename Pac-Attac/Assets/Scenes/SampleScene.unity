@@ -1565,6 +1565,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 42753419}
+--- !u!1 &1765761304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7171616362716959595, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
+  m_PrefabInstance: {fileID: 1752459305839630735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1795909114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,11 +1712,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5961189072839324761, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 6.72
       objectReference: {fileID: 0}
     - target: {fileID: 5961189072839324761, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 5961189072839324761, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1752,6 +1757,14 @@ PrefabInstance:
     - target: {fileID: 7171616362716959595, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7339847793822992542, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
+      propertyPath: Coin
+      value: 
+      objectReference: {fileID: 1765761304}
+    - target: {fileID: 7339847793822992542, guid: 88d5049f8216bd4419c9073de409d062, type: 3}
+      propertyPath: spawnPadding
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

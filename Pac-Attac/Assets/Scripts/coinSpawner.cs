@@ -1,27 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class coinSpawner : MonoBehaviour
+public class CoinSpawner : MonoBehaviour
 {
-    public GameObject coinPrefab;
-    public float spawnInterval = 3f;
-    public float spawnPadding = 50f;
+    public GameObject Coin; 
+    public float spawnInterval = 3.5f; // Time in seconds between spawns
+    public float spawnPadding = 100f; // Keeps coins from spawning at the edges
 
-    private float spawnTimer;
+    private float spawnTimer; 
 
-    // I'm making the coins spawn on the screen
     void Start()
     {
-        spawnTimer = spawnInterval;
+        spawnTimer = spawnInterval; 
     }
 
-    // Update is called once per frame
     void Update()
     {
-        spawnTimer -= Time.deltaTime;
+        spawnTimer -= Time.deltaTime; 
 
-        if (spawnTimer <= 0f)
+        if (spawnTimer <= 0f) 
         {
             SpawnCoin();
             spawnTimer = spawnInterval;
@@ -30,11 +26,16 @@ public class coinSpawner : MonoBehaviour
 
     void SpawnCoin()
     {
+        
         Vector2 screenMin = Camera.main.ScreenToWorldPoint(new Vector2(spawnPadding, spawnPadding));
         Vector2 screenMax = Camera.main.ScreenToWorldPoint(new Vector2(1024 - spawnPadding, 1024 - spawnPadding));
+
+        
         float randomX = Random.Range(screenMin.x, screenMax.x);
         float randomY = Random.Range(screenMin.y, screenMax.y);
         Vector2 spawnPosition = new Vector2(randomX, randomY);
-        Instantiate(coinPrefab, spawnPosition, Quaternion.identity);
+
+        
+        Instantiate(Coin, spawnPosition, Quaternion.identity);
     }
 }
