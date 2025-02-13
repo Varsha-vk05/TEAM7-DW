@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1921540972107951943}
   - component: {fileID: 7381038591332573145}
   - component: {fileID: 4813232208999933560}
-  - component: {fileID: 6174009149803748583}
   - component: {fileID: 7221329132249788749}
+  - component: {fileID: 6174009149803748583}
+  - component: {fileID: 2729542556074801372}
   m_Layer: 0
   m_Name: coin_0
   m_TagString: Untagged
@@ -108,18 +109,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6174009149803748583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556536364052275784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08fece3aa02301047a429bf7b3866395, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &7221329132249788749
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,3 +144,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.42
+--- !u!114 &6174009149803748583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556536364052275784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fece3aa02301047a429bf7b3866395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2729542556074801372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556536364052275784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b70d9bfed35f29f4183e6b06b73752a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coin: {fileID: 6556536364052275784}
+  spawnInterval: 3.5
+  spawnPadding: 175
