@@ -22,7 +22,7 @@ public class coinCollision : MonoBehaviour
             { 
                 playerScore.AddScore(1);
                 anim.Play("coinCollect");
-                Destroy(gameObject, 0.6f);
+                Destroy(gameObject, 0.5f);
             }
         }
     }
