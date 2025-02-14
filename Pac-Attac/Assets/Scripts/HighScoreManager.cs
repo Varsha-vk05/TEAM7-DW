@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HighScoreManager : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class HighScoreManager : MonoBehaviour
                 }
             }
         }
-        Highscores highscores = new Highscores { highscoreEntryList = highScoreEntryList };
+        Highscores highscores = new Highscores (highscoreEntryList = highScoreEntryList );
 
         highScoreEntryTransformList = new List<Transform>();
         foreach (HighScoreEntry highScoreEntry in highScoreEntryList)
@@ -69,9 +70,10 @@ public class HighScoreManager : MonoBehaviour
             transformList.Add(entryTransform);
 
         }
+    }
     private class AddHighscoreEntry(int score, string name)//creates high score entry
     {
-        HighscoreEntry highscoreEntry = new HighscoreEntry { score = score, name = name };
+        HighscoreEntry highscoreEntry = new HighscoreEntry ( score = score, name = name );
 
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
