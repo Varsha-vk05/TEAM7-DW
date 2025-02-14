@@ -1476,7 +1476,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6556536364052275784, guid: 01453fbe2129b9041b5ccbdce24e9ca0, type: 3}
   m_PrefabInstance: {fileID: 1304442274}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1236644859
+--- !u!114 &1236644847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Coin: {fileID: 1236644846}
-  spawnInterval: 4
+  spawnInterval: 5.8
   spawnPadding: 220
 --- !u!1 &1268343965
 GameObject:
@@ -1673,7 +1673,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6556536364052275784, guid: 01453fbe2129b9041b5ccbdce24e9ca0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1236644859}
+      addedObject: {fileID: 1236644847}
   m_SourcePrefab: {fileID: 100100000, guid: 01453fbe2129b9041b5ccbdce24e9ca0, type: 3}
 --- !u!1 &1454114186
 GameObject:
