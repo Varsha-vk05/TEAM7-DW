@@ -3,7 +3,7 @@ using UnityEngine;
 public class CoinSpawner : MonoBehaviour
 {
     public GameObject Coin; 
-    public float spawnInterval = 3.5f; // Time in seconds between spawns
+    public float spawnInterval = 4f; // Time in seconds between spawns
     public float spawnPadding = 220f; // Keeps coins from spawning at the edges
 
     private float spawnTimer; 
